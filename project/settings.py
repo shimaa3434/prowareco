@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ar-eg'
 
 TIME_ZONE = 'UTC'
 
@@ -127,6 +127,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [ BASE_DIR / "static",]
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = '/staticfiles/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'

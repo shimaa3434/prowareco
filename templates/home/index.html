@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ {% if messages %}
+     {% for message in messages %}
+         <div class="text-center alert alert-{{ message.tags }}">
+             {{ message|safe }}
+         </div>
+     {% endfor %}
+ {% endif %} 
+    <!--navbar-->
+    <header id='header'>
+      <a href="#home" class="logo  text-white"><img src= '{% static "img/logo.png" %}' class="img-fluid">pro ware</a>
+      <nav>
+        <ul>
+          <li data-aos="zoom-out" data-aos-delay="1000"><a  href="#services">خدماتنا </a></li>
+          <li data-aos="zoom-out" data-aos-delay="1500"><a  href="#aboutUs">من نحن</a></li>
+          <li data-aos="zoom-out" data-aos-delay="2000"><a  href="#contact">اتصل بنا</a></li>
+          <li class="pr-5" data-aos="zoom-out" data-aos-delay="2500">
+            <ul class="social">
+              <li><a  href="#"><i class="fab fa-facebook-square"></i></a></li>
+              <li><a href="#"> <i class="fab fa-google-plus-square"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin"></i> </a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="fas fa-bars text-white"></div>
+    </header>
+    <!--navbar-->
+    <!--home-->
+    <section class="main" id ='home'>
+        <div class="container pt-5">
+          <div class="row pt-5">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-easing="ease-in-out"  data-aos-delay="2000">
+              <h1>برو وير<br>
+              <span>للبرمجيات </span></h1>
+              <p class="pt-3">   إذا كنت تريد تصميم موقع إلكتروني متكامل ومتجاوب مع جميع الشاشات بالإضافة إلى استضافة قوية يمكن التواصل معنا للحصول على أفضل العروض... </p>
+            <a href='#contact' class="btn my-button">تواصل معنا</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="2500">
+              <img src="{% static "img/logo.png" %}" class="img-fluid py-3" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+        <div class="custom-shape-divider-bottom-1615888030">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+              <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+          </svg>
+      </div>
+    </section>
+    <!--home-->
+    <!--services-->
+<section class="services" id= 'services'>
+  <div class="container mx-auto px-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="sec-header text-center">
+          <h2>خدماتنا</h2>
+          <p class=""> نقوم  بتقديم أفضل التصميمات والبرمجيات التي تساعدك في عملك سواء كانت برامج سطح مكتب أو تطبيقات موبايل أو هارد وير أو غيرهاالكثير.... </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    {% for s in service%}
+      <div class="col-lg-3" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-delay="1000">
+        <div class="single-box">
+          <span class="icon"> <i class="fas {{s.icon}}"></i></span>
+          <div class="content">
+            <h3>{{s.name}} </h3>
+            <p class="">{{s.dec}} </p>
+          </div>
+        </div>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+</section>
+<!--services-->
+<!--about us-->
+<section class="aboutUs" id='aboutUs'>
+  <div class="custom-shape-divider-top-1615891872">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+</div>
+<div class="container text-white py-5">
+  <div class="row pt-5">
+    <div class="col-8 mx-auto">
+      <div class="sec-header text-center" data-aos="zoom-in">
+        <h2>من نحن</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row mx-auto">
+    <div class="col-lg-8 mx-auto shadow bg text-center" data-aos="zoom-in" data-aos-delay="1000">
+      <p class="pt-3"> ان خدمات التي تقدمها شركة برو وير  مميزة وتشمل تصميم مواقع الانترنت وتطبيقات  و التطبيقات التجارية ، توفر شركتنا هذه الخدمة المميزة لعملائنا الكرام بشكلٍ مبسط يلبي جميع متطلبات .<p>
+      <p class="pt-3">نقوم باستخدم افضل اللغات البرمجية و الانسب لكل نظام تشغيل حيث نعمل على برمجة تطبيقات الويب و الديسك توب و تطبيقات الهاتف مع تحقيق كافة المعايير القياسية فى برمجة  .</p>
+      <p class="pt-3"> خبرتنا الاساسية تكمن في توصيل العلامة التجارية لأعمالك من خلال الفرص العظيمة التي يتيحها الويب، حيث نشرك التصميم الإبداعي لعلامتك التجارية، موقعك الالكترونية في عملية متكاملة لتعزيز تواجدك بين المنافسين. شبكات تهدف للأناقة والبساطة والوضوح، مع التركيز على تحسين تجربة المستخدم لما نصنعه لك من تطبيقات.</p>
+      <a href= '#contact' class="btn my-button">تواصل معنا</a>
+    </div>
+  </div>
+</div>
+
+<div class="custom-shape-divider-bottom-1615891946">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+  </svg>
+</div>
+</section>
+<!--about us-->
+<!--contact us-->
+<section class="contact mt-3 py-3" id='contact'>
+<div class="container ">
+  <div class="row">
+    <div class="col-12">
+      <div class="sec-header text-center" data-aos="zoom-out" data-aos-delay="1000">
+        <h2>تواصل معنا</h2>
+      </div>
+    </div>
+  </div>
+    <div class="row justify-content-center">
+      <div class="col" data-aos="zoom-in-left" >
+          <div class="card card-body border-0 shadow">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="card py-5 card-body border-0 leftside">
+                          <div class="media mb-5 align-items-center">
+                              <div class= 'iconBox ml-3'>
+                                  <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                              </div>
+                              <div class="media-body">
+                                <p class="mt-0 text-white">{{info.place}}</p>
+                              </div>
+                          </div>
+                          <div class="media mb-5 align-items-center">
+                              <div class= 'iconBox ml-3'>
+                                  <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                              </div>
+                              <div class="media-body">
+                                <p class="mt-0 text-white">{{info.phone}}</p>
+                              </div>
+                          </div>
+                          <div class="media mb-5 align-items-center">
+                              <div class= 'iconBox ml-3'>
+                                  <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>                                        </div>
+                              <div class="media-body">
+                                <p class="mt-0 text-white">{{info.email}}</p>
+                              </div>
+                          </div>
+                          <div class="socialBox ">
+                              <ul class='list-unstyled '>
+                                  <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                                  <li><a href="#"><i class="fab fa-google-plus-square fa-2x"></i></li>
+                                  <li><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-8 mt-5">
+                  {% include 'home/client_form.html' %}
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</section>
+<!--contact us-->
+<!--footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 p-2 border-left">
+        <h5>روابط مفيدة</h5>
+        <hr>
+        <a href ='#home' class="my-3"><h6>الصفحة الرئيسية</h6></a>
+        <a href="#services" class="my-3"><h6>خدماتنا </h6></a>
+        <a href="#aboutUs" class="my-3"><h6>من نحن </h6></a>
+        <a href="#contact" class="my-3"><h6>تواصل معنا  </h6></a>
+      </div>
+      <div class="col-md-4 p-2 border-left border-left-sm-0 ">
+        <h5>خدماتنا </h5>
+        <hr>
+        <a href="#" class="my-3"><h6>مواقع ويب </h6></a>
+        <a href="#" class="my-3"><h6>تطبيقات موبايل </h6></a>
+        <a href="#" class="my-3"><h6>برامج سطح مكتب  </h6></a>
+        <a href="#" class="my-3"><h6> هارد وير</h6></a>
+      </div>
+      <div class="col-md-4 p-2">
+        <h5>للتواصل معنا </h5>
+        <hr>
+        <h6 class="my-3"><i class="fas fa-phone-square ml-3"></i> {{info.phone}} </h6>
+        <h6 class="my-3"><i class="fas fa-envelope-open ml-3"></i> {{info.email}}</h6>
+        <h6 class="my-3"><i class="fas fa-map-marked-alt ml-3"></i> {{info.place}}</h6>
+        <div class="d-flex justify-content-center">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fab fa-facebook-square"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fab fa-google-plus-square"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fab fa-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <p>
+      <center>جميع حقوق الملكية محفوظة لـ<img src= '{% static "img/logo.png" %}' class="img-fluid mr-2"></center>
+    </p>
+  </div>
+</footer>
+<!--footer-->
+{% endblock content %}
